@@ -36,7 +36,7 @@ def send_downAlert():
     server.quit()
   
 while True:
-    current_ping == ping()
+    current_ping = ping()
     if current_ping != last_ping:
         if current_ping == True:
             send_upAlert()
