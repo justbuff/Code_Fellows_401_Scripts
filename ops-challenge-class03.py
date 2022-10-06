@@ -37,6 +37,7 @@ def send_downAlert():
   
 while True:
     current_ping = ping()
+    time.sleep(2)
     if current_ping != last_ping:
         if current_ping == True:
             send_upAlert()
