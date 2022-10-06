@@ -44,3 +44,5 @@ while True:
         if current_output == False:
             send_downAlert()
     last_output = current_output
+    
+# Got it to send an email but it's always downAlert  
