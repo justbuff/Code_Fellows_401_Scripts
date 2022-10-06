@@ -8,8 +8,8 @@ import smtplib
 user_ip = input("Please enter IP address: ") 
 user_email = input("Please enter your email address: ")
 user_password = input("Please enter your email password: ")
-current_output = 0
-last_output = 0
+current_output = None
+last_output = None
 
 def ping():
     response = os.system("ping -n 1 " + user_ip)
