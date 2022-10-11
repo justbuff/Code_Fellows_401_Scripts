@@ -27,6 +27,6 @@ encrypted = fernet.encrypt(original)
 with open('sample.txt', 'wb') as encrypted_file:
     encrypted_file.write(encrypted)
     
-# decrypting the same file
+# decrypting the same file and writing the decrypted data
 with open('sample.txt', 'wb') as decrypted_file:
     decrypted_file.write(decrypted)
