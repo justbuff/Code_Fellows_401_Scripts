@@ -30,12 +30,12 @@ print("Key is " + str(key.decode('utf-8')))
 def encrypt_file():
     file = user_path.encode()
     encrypted_file = f.encrypt(file)
-    print("File is " + str(encrypted_file.decode('utf-8')))
+    print("Decrypted file is " + str(encrypted_file.decode('utf-8')))
   
 def decrypt_file():
     file = user_path.encode()
     decrypted_file = f.decrypt(file)
-    print("File is " + str(decrypted_file.decode('utf-8')))
+    print("Encrypted file is " + str(decrypted_file.decode('utf-8')))
     
 def encrypt_message():
     message = user_msg.encode()
