@@ -63,6 +63,12 @@ def ping_sweep():
   
   for ip in ip_list:
   
+    elif(resp.haslayer(ICMP)):
+        if(
+            int(resp.getlayer(ICMP).type) == 3 and
+            int(resp.getlayer(ICMP).code) in [1,2,3,9,10,13]
+        ):
+            print(f"{host}:{dst_port} is filtered (silently dropped).")
   
   
   
