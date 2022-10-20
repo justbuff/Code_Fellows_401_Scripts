@@ -16,7 +16,7 @@ for dst_port in port_range:
     
     elif(resp.haslayer(TCP)):
         if(resp.getlayer(TCP).flags == 0x12):
-            send_rst = sr(IP(dst=host)/TCP(sport=src_port,dport=dst_port,flags='R'),timeout=1,verbose=0,)
+            send_rst = sr(IP(dst=host)/TCP(sport=src_port,dport=dst_port,flags='R'),timeout=1,verbose=0)
             print(f"{host}:{dst_port} is open.")
 
         elif (resp.getlayer(TCP).flags == 0x14):
