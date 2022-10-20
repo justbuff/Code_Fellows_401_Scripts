@@ -20,7 +20,6 @@ def option_menu():
         sys.exit()   
     else:
       print("Please try again")
- 
 
 def port_scan():
   remote_server=input("Please enter an IP address to scan: ")
