@@ -23,7 +23,6 @@ def option_menu():
 
 def port_scan():
   remote_server=input("Please enter an IP address to scan: ")
-  remote_serverIP = socket.gethostbyname(remote_server)
   port_range=[22,23,80,443,3389]
   for dst_port in port_range:
         src_port = random.randint(1025, 65534)
