@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 import sys
-from scapy.all import ICMP,IP,sr1,sr,TCP
 import random
 from ipaddress import IPv4Network
+from scapy.all import ICMP,IP,sr1,sr,TCP
 
 def option_menu():
     print ("""
