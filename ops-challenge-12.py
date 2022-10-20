@@ -25,8 +25,8 @@ def port_scan():
   remote_server=input("Please enter an IP address to scan: ")
   port_range=[22,23,80,443,3389]
   for dst_port in port_range:
-        src_port = random.randint(1025, 65534)
-        resp = sr1(IP(dst=host)/TCP(sport=src_port,dport=dst_port,flags="S"),timeout=1,verbose=0)
+        src_port=random.randint(1025, 65534)
+        resp=sr1(IP(dst=host)/TCP(sport=src_port,dport=dst_port,flags="S"),timeout=1,verbose=0)
         if resp is None: 
             print(f"{host}:{dst_port} is filtered (silently dropped).")
         elif (resp.haslayer(TCP)):
@@ -40,7 +40,7 @@ def ping_sweep():
   ip_list=IPv4(ip_address)
   live_count=0
   for ip in ip_list:
-        resp = sr1(IP(dst=str(host))/ICMP(),timeout=2,verbose=0,)
+        resp=sr1(IP(dst=str(host))/ICMP(),timeout=2,verbose=0,)
         if (host in (ipadd.network_address,ipadd.broadcast_address)):
             continue
         if resp is None:
