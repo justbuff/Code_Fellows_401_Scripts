@@ -21,7 +21,6 @@ def ping_status(host):
         port_scan(host,port_range)
 
 def port_scan(host,port_range):
-  remote_server=input("Please enter an IP address to scan: ")
   for dst_port in port_range:
         src_port=random.randint(1025, 65534)
         resp=sr1(IP(dst=host)/TCP(sport=src_port,dport=dst_port,flags="S"),timeout=1,verbose=0)
