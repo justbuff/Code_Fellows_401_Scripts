@@ -51,6 +51,7 @@ def ping_sweep():
         else:
             print(f"{host} is responding.")
             live_count += 1
+   print(f"{live_count}/{ipadd.num_addresses} hosts are online.")  
 
 while True:
     option_menu()
