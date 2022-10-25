@@ -21,6 +21,22 @@
 import time
 import getpass
 
+def option_menu():
+    print ("""
+    1. Dictionary Iterator
+    2. Password Check
+    3. Exit
+    """)
+    ans=input("Please choose an option: ") 
+    if ans=="1":
+        iterator()  
+    elif ans=="2":
+        password_check()   
+    elif ans=="3":
+        sys.exit()   
+    else:
+      print("Please try again")
+
 def iterator():
   path = input("Please enter your dictionary filepath:\n")
   file = open(path)
@@ -43,7 +59,6 @@ def password_check():
   else:
     print(str(pwd) + " is not inside the wordlist")
   
-iterator()
-password_check()
+option_menu()
   
 
