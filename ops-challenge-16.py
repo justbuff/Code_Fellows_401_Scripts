@@ -54,7 +54,7 @@ def iterator():
 def password_check():
   pwd = getpass.getpass("Please enter a password:\n")
   path = input("Please enter the wordlist file path:\n")
-  if string in path:
+  if pwd in path:
     print(str(pwd) + " is inside the wordlist")
   else:
     print(str(pwd) + " is not inside the wordlist")
