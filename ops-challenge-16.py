@@ -24,7 +24,7 @@ import getpass
 def option_menu():
     print ("""
     1. Dictionary Iterator
-    2. Password Check
+    2. Password Checker
     3. Exit
     """)
     ans=input("Please choose an option: ") 
