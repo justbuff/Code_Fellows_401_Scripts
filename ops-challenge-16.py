@@ -17,7 +17,7 @@
 # Search the word list for the user input string.
 # Print to the screen whether the string appeared in the word list.
 
-
+import sys
 import time
 import getpass
 
@@ -42,7 +42,6 @@ def iterator():
   file = open(path)
   line = file.readline()
   print(line)
-  
   while line:
     line = line.rstrip()
     word = line
@@ -50,6 +49,7 @@ def iterator():
     time.sleep(1)
     line = file.readline()
   file.close()
+  option_menu()
   
 def password_check():
   pwd = getpass.getpass("Please enter a password:\n")
@@ -59,8 +59,10 @@ def password_check():
   for line in datafile:
     if path in line:
         print(str(pwd) + " is inside the wordlist")
+        option_menu()
     else:
         print(str(pwd) + " is not inside the wordlist")
+        option_menu()
   
 option_menu()
   
