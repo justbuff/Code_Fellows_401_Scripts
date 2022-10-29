@@ -3,7 +3,7 @@
 from zipfile import ZipFile
 
 zip_file = input("Please enter the absolute path of the zip file you want to brute force:")
-password_list = "./usr/share/wordlists/rockyou.txt"
+password_list = "rockyou.txt"
 obj = zipfile.ZipFile(zip_file)
 
 def crack_password(password_list, obj):
