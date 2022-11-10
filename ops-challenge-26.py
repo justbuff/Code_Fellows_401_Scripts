@@ -5,7 +5,7 @@ import logging
 import datetime
 import time
 
-logging.basicConfig(filename='26log.txt', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(filename='file.log', encoding='utf-8', level=logging.DEBUG)
 
 def check_ping():
     print("Logging Started")
