@@ -15,8 +15,8 @@ def Linux_search():
 def Windows_search():
   $prompt_file = Read-Host -Prompt "Please provide a target fille path"
   $prompt_directory = Read-Host -Prompt "Please provide a target directory path"
-  function search_directory {
+  function Search-Directory {
     Get-ChildItem -Path $prompt_directory -Filter $prompt_file
   }
-  Write-Output search_directory
+  Write-Output Search-Directory
   
