@@ -1,28 +1,32 @@
 #!/usr/bin/env python3
 
+import sys
 import socket
 import time
 import subprocess
 
-a = input("Please enter an IP or URL address: ")
-p = input("Please enter a port number: ")
+prompt_address = input("Please enter an IP or URL address: ")
+prompt_port = input("Please enter a port number: ")
+content = "GET / HTTP/1.1\n.Host: scanme.nmap.org\n\n"
 
-def netcap(a, p):
+def netcat(pa, pp):
   sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-  sock.connect((a, int(p)))
-  
-  run = "nc" + a + " " + p
-  sock.sendall(run.encode())
-  res = " "
-  
+  sock.connect((pa, pp))
+  sock.sendall(content)
+  time.sleep(0.5)
+  sock.shutdown(socket.SHUT_WR)
+  res = ""
   while True:
     data = sock.recv(1024)
     if (not data):
       break
-    res += data.decode()
-    
+    res += data.decode() 
   print(res)
-  
   sock.close()
-  
-def telnet():
+ 
+netcat(prompt_address, prompt_port, content.encode())
+
+telnet prompt_address prompt_port
+
+nmap -Pn -p prompt_port -sV -script=banner prompt_address
+
