@@ -15,11 +15,11 @@ def linux_search():
 def windows_search():
   prompt_file = input("Please provide a target file path: ")
   prompt_directory = input("Please provide a target directory path: ")
-  for root, dir, files in os.walk(prompt_directory):
-      if prompt_file in files:
-         result.append(os.path.join(root, prompt_file))
-  print(result)
-  os.system("ls " + str(prompt_file) + " | echo \"$(wc -l) files searched.\"")
+  searched = os.popen("dir /a:-d /s /b " + str(dir) + " | find /c \":\\\"").read()
+  print("Files searched: " + searched)
+  found = os.popen("dir /b/s " + str(dir) + "\\" + str(prompt_file) + " | find /c \":\\\"").read()
+  print("Files found: " + found)
+  os.system("dir /b/s " + str(prompt_directory) + "\\" + str(prompt_file))
 
 def platform_search():
   if platform == "linux" or platform == "linux2":
