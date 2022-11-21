@@ -4,6 +4,8 @@
 
 import os
 import hashlib
+from sys import platform
+import os, time, datetime, math
 
 def hash_file(filename):
   hash_file = hashlib.sha256()
