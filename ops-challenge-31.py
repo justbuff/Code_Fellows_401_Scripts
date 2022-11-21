@@ -22,9 +22,9 @@ def windows_search():
   os.system("ls " + str(prompt_file) + " | echo \"$(wc -l) files searched.\"")
 
 def platform_search():
-  if platform =="Linux":
+  if platform == "linux" or platform == "linux2":
     linux_search()
-  elif platform == "Windows":
+  elif platform == "win32":
     windows_search()
   
 platform_search()
