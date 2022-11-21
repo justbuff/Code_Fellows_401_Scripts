@@ -15,6 +15,10 @@ def hash_file(filename):
       print(hash_file)
   return h.hexdigest()
 
+def time_stamp():
+    rn=datetime.datetime.now()
+    return rn.strftime('%m-%d-%Y %H:%M:%S')
+  
 def hash_dir():
     dir_count = 0
     file_count = 0
@@ -24,24 +28,21 @@ def hash_dir():
         dir_count += 1
         for file in files: 
             fstat=os.stat(os.path.join(path, file))
-            if (fstat.st_size>1024*1024):
-                file_size = math.cell(fstat.st_size/(1024*1024))
-                unit=="HR"
+            if (fstat.st_size > 1024 * 1024):
+                file_size = math.ceil(fstat.st_size / (1024 * 1024))
+                unit = "MB"
             elif (fstat.st_size>1024):
-                file_size=math.cell(fstat.st_size/1024)
-                unit=="KB"
+                file_size=math.ceil(fstat.st_size / 1024)
+                unit = "KB"
             else: 
-                file_size = fstat.st_size="B"
+                file_size = fstat.st_size
+                unit = "B"
             file_count += 1
             file_name = os.path.join(path,file)
             hash_name = hash_file(file_name)
-            time_stamp = timestamps()
+            time_stamp = timestamp()
             print(time_stamp)
-            print(" File Info: "+{file}+"\tsize: "+{str(file_size) + unit}+"\tpath: "+{str(file_name)})
-            print(file_size + unit)
-            print(dir_path + "/" + file_name)
-            print("Hash: ")
-            print(hash_name())
+            print(" File Info: "+{file}+"\tsize: "+{str(file_size) + unit} + "\tpath: "+{str(file_name)})
 
     print("Total hashed files: {} "+ "from {} directories"+format(file_count,dir_count))
     dir_count=0
