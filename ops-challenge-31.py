@@ -24,7 +24,7 @@ def windows_search():
 def platform_search():
   if platform =="Linux":
     linux_search()
-  elif platform == "win32":
+  elif platform == "Windows":
     windows_search()
   
 platform_search()
