@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# to be combined with ops challenge 31
+
+import os
 import hashlib
 
 def hash_file(filename):
