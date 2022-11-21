@@ -4,7 +4,6 @@
 
 from sys import platform
 import os, time, datetime, math
-from matplotlib.pyplot import pause
 import hashlib
 
 def malware_check():
