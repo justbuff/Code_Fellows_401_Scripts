@@ -1,10 +1,9 @@
-
 #!/usr/bin/env python3
 
 # Author:      Abdou Rockikz
 # Description: TODO: Add description 
-# Date:        TODO: Add date
-# Modified by: TODO: Add your name
+# Date:        11/23/2022
+# Modified by: Justin Buffington
 
 ### TODO: Install requests bs4 before executing this in Python3
 
