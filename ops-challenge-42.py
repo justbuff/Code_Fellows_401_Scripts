@@ -23,11 +23,12 @@ type(ip_addr)
 resp = input("""\nSelect scan to execute:
                 1) SYN ACK Scan
                 2) UDP Scan
-                3)              \n""") ### TODO: Select what your third scan type will be
+                3) IP protocol scan \n""") ### TODO: Select what your third scan type will be
 print("You have selected option: ", resp)
 
 range = '1-50'
 
+port_range = input("Enter a port range to scan")
 ### TODO: Prompt the user to type in a port range for this tool to scan
 
 if resp == '1':
@@ -38,11 +39,15 @@ if resp == '1':
     print(scanner[ip_addr].all_protocols())
     print("Open Ports: ", scanner[ip_addr]['tcp'].keys())
 elif resp == '2':
+    print("Nmap Version: ", scanner.nmap_version())
+    scanner.scan(ip_addr, range, '-v -sU')
+    print(scanner.scaninfo())
     ### TODO: Add missing code block here
-    print("Please enter a valid option") ### TODO: Remove this
 elif resp == '3':
+    print("Nmap Version: ", scanner.nmap_version())
+    scanner.scan(ip_addr, range, '-v -sO')
+    print(scanner.scaninfo())
     ### TODO: Add missing code block here
-    print("Please enter a valid option") ### TODO: Remove this
 elif resp >= '4':
     print("Please enter a valid option")
 ``
