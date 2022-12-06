@@ -18,3 +18,4 @@ def portScanner(portno):
         print("Port open")
 
 portScanner(port)
+
