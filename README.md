@@ -2,8 +2,6 @@
 
 - [Ops Challenge 02](ops-challenge-02.py)
 - [Ops Challenge 03](ops-challenge-03.py)
-- [Ops Challenge 04](ops-challenge-04.py)
-- [Ops Challenge 05](ops-challenge-05.py)
 - [Ops Challenge 06](ops-challenge-06.py)
 - [Ops Challenge 07](ops-challenge-07.py)
 - [Ops Challenge 08](ops-challenge-08.py)
